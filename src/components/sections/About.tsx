@@ -39,14 +39,25 @@ export const About: React.FC = () => {
   const experiences = [
     {
       role: "Backup Store Leader",
+      company: "Sports Station (PT. Mitra Adiperkasa Tbk)",
+      location: "Pekanbaru, Indonesia",
+      period: "Jul 2026 - Present",
+      points: [
+        "Assumed full responsibility for store operations in the absence of the Store Leader. Led morning briefings and set daily sales targets for the team.",
+        "Acted as the primary Person in Charge (PIC) for Skechers, 2XU, Impulse, and New Balance brands. Managed stock availability and visual merchandising standards directly.",
+        "Oversaw the accuracy of the ETP POS system. Ensured the smooth execution of daily transactions. Monitored Goods In Transit (GIT) data to maintain zero-discrepancy records.",
+        "Analyzed daily sales reports to achieve 100% MTD (Month-to-Date) achievement. Formulated upselling strategies for the team.",
+        "Managed asset security and data integrity via Mobile Device Management (MDM). Led inventory audits using PDT devices.",
+      ],
+    },
+    {
+      role: "Backup Store Leader",
       company: "Puma (PT. Mitra Adiperkasa Tbk)",
       location: "Pekanbaru, Indonesia",
-      period: "Mar 2026 - Present",
+      period: "Mar 2026 - Jun 2026",
       points: [
-        "Assuming full responsibility for store operations in the absence of the Store Leader, including leading morning briefings and setting daily sales targets for the team.",
-        "Supervising ETP POS system accuracy, ensuring seamless daily settlements, and monitoring GIT (Goods In Transit) data to maintain zero-discrepancy records.",
-        "Analyzing daily sales reports to achieve a 100% MTD Achievement and formulating upselling strategies for the team.",
-        "Managing asset security and data integrity via MDM (Mobile Device Management) and leading inventory audits (Cycle Counts) using PDT devices.",
+        "Executed store operational and managerial duties as a Backup Store Leader.",
+        "Led the team and ensured customer service standards were maintained prior to reassignment to Sports Station.",
       ],
     },
     {
