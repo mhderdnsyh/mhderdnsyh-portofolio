@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Muhammad Erdiansyah | Portfolio",
-  description: "Personal portfolio of Muhammad Erdiansyah, a Frontend Developer and AI Enthusiast specializing in web technologies (Next.js, React, TypeScript, Tailwind) and Speech Synthesis (VITS).",
-  keywords: ["Muhammad Erdiansyah", "mhderdnsyh", "Frontend Developer", "AI Specialist", "VITS Speech Synthesis", "Next.js Portfolio", "React Developer", "Pekanbaru"],
+  description: "Personal portfolio of Muhammad Erdiansyah, a Software Developer and IT Enthusiast specializing in web technologies (Next.js, React, TypeScript, Tailwind) and Speech Synthesis (VITS).",
+  keywords: ["Muhammad Erdiansyah", "mhderdnsyh", "Software Developer", "IT Enthusiast", "VITS Speech Synthesis", "Next.js Portfolio", "React Developer", "Pekanbaru"],
   authors: [{ name: "Muhammad Erdiansyah", url: "https://github.com/mhderdnsyh" }],
 };
 

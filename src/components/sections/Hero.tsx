@@ -53,7 +53,7 @@ export const Hero: React.FC = () => {
           className="text-lg md:text-2xl text-zinc-400 font-medium mb-4 max-w-2xl mx-auto flex items-center justify-center gap-2"
         >
           <Sparkles size={20} className="text-cyan-400" />
-          <span>Frontend Developer & AI Enthusiast</span>
+          <span>Software Developer & IT Enthusiast</span>
         </motion.p>
 
         <motion.p
