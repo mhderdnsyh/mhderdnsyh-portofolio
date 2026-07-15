@@ -7,6 +7,14 @@ import { FolderGit2 } from "lucide-react";
 export const Projects: React.FC = () => {
   const projectList = [
     {
+      title: "Digital Wedding Invitation Platform",
+      description: "Developed a responsive and interactive Digital Wedding Invitation web application designed to provide a seamless user experience for digital event invitations. Key features include dynamic guest management, personalized link generation, RSVP tracking, digital guestbook/wishes, and integrated Google Maps for venue navigation. Structured an optimized relational database to efficiently handle RSVP data and digital wishes storage.",
+      tags: ["Web App", "Responsive Design", "Relational Database", "Google Maps", "RSVP"],
+      githubUrl: "https://github.com/mhderdnsyh",
+      demoUrl: "https://surya-juni-wedding.vercel.app/",
+      gradient: "from-rose-600/70 via-pink-600/70 to-red-600/70",
+    },
+    {
       title: "vits-project",
       description:
         "Developed a Javanese dialect Text-to-Speech (TTS) system using VITS (Variational Inference with adversarial learning). Handled dataset synthesis (LJSpeech format) and model optimization using Python & PyTorch.",
