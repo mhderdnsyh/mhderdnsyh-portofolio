@@ -12,6 +12,7 @@ export const Projects: React.FC = () => {
       tags: ["Web App", "Responsive Design", "Relational Database", "Google Maps", "RSVP"],
       githubUrl: "https://github.com/mhderdnsyh",
       demoUrl: "https://surya-juni-wedding.vercel.app/",
+      imageUrl: "/images/project-digital-wedding.jpg",
       gradient: "from-rose-600/70 via-pink-600/70 to-red-600/70",
     },
     {

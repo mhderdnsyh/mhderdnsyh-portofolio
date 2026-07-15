@@ -1,54 +1,53 @@
-# 📝 Issue: Penambahan Proyek Baru "Digital Wedding Invitation Platform"
+# 📝 Issue: Penambahan Gambar (Assets) & Tautan Kredensial dari LinkedIn
 
 **Deskripsi:**
-Terdapat penambahan portofolio proyek terbaru yang perlu dimasukkan ke dalam halaman "Projects". Proyek ini adalah sebuah platform undangan pernikahan digital interaktif dengan fitur manajemen tamu, RSVP, *guestbook*, dan integrasi Google Maps.
+Portofolio saat ini masih menggunakan ikon bawaan dan elemen dekoratif (*gradient boxes*) untuk merepresentasikan riwayat kerja, pendidikan, sertifikasi, dan proyek. Tujuan dari *issue* ini adalah untuk memperbarui komponen-komponen tersebut agar menampilkan **gambar/logo asli** serta menyisipkan **tautan kredensial** (Credentials URL) yang bersumber dari LinkedIn pemilik.
 
 **Tujuan:**
-Dokumen ini dibuat sebagai panduan instruksi (planning) bagi Junior Programmer atau AI Assistant untuk mengimplementasikan dan menambahkan data proyek baru ini ke dalam *frontend* portofolio.
+Dokumen ini adalah panduan instruksi (planning) bagi Junior Programmer atau AI Assistant untuk memperbarui antarmuka (UI) agar mendukung gambar eksternal/lokal dan tautan kredensial.
 
 ---
 
-## 📄 Data Proyek Baru
+## 📄 Data yang Dibutuhkan
 
-Harap tambahkan data proyek berikut ke urutan paling atas di bagian *Featured Projects*:
-
-*   **Title:** Digital Wedding Invitation Platform
-*   **Description:** Developed a responsive and interactive Digital Wedding Invitation web application designed to provide a seamless user experience for digital event invitations. Key features include dynamic guest management, personalized link generation, RSVP tracking, digital guestbook/wishes, and integrated Google Maps for venue navigation. Structured an optimized relational database to efficiently handle RSVP and wishes storage.
-*   **Tags:** (Gunakan badge/tags teknologi yang sesuai, contoh: `["Web App", "Responsive Design", "Database", "Google Maps API", "RSVP System"]` atau sesuaikan jika ada bahasa spesifik yang digunakan seperti `["React", "Node.js", "MySQL"]`).
-*   **GitHub URL:** `https://github.com/mhderdnsyh` (Atau biarkan kosong/ubah jika ada link spesifik).
-*   **Gradient:** `from-rose-600/70 via-pink-600/70 to-red-600/70` (Saran kombinasi warna gradient card agar bernuansa romantis/pernikahan).
+Programmer perlu mengumpulkan URL Gambar atau mengunduh gambar-gambar berikut dari LinkedIn:
+1. **Experience (Pengalaman Kerja):** Logo perusahaan (PT. Mitra Adiperkasa Tbk / Sports Station / Puma, Lab Inkubator UIN, BPS, KPU).
+2. **Education (Pendidikan):** Logo universitas (UIN Suska Riau).
+3. **Licenses & Certifications (Sertifikasi):** Logo penerbit (Udemy, Oracle, Sololearn, Dibimbing.id) beserta *Credential URL* masing-masing sertifikat.
+4. **Projects (Proyek):** Gambar/Screenshot antarmuka (*thumbnail*) dari proyek-proyek yang ada.
 
 ---
 
 ## 🛠️ Tahapan Implementasi
 
-Berikut adalah langkah-langkah yang harus dilakukan untuk menerapkan penambahan proyek ini:
+Berikut adalah langkah-langkah yang harus dilakukan untuk menerapkan pembaruan ini:
 
-1.  **Lokasi File:**
-    Buka file komponen yang merender daftar proyek. File ini berada di direktori `src/components/sections/Projects.tsx`.
+### Tahap 1: Persiapan Aset Gambar
+*Pilihan A (Disarankan)*: Unduh semua logo dan screenshot proyek dari LinkedIn, lalu simpan ke dalam folder `public/images/` di dalam proyek ini (misal: `public/images/map-logo.png`).
+*Pilihan B*: Gunakan URL gambar eksternal secara langsung (pastikan URL bersifat publik dan tidak kedaluwarsa). Jika menggunakan Next.js `<Image>`, tambahkan domain LinkedIn di `next.config.js`.
 
-2.  **Identifikasi Variabel Data:**
-    Di dalam komponen `Projects.tsx`, cari array bernama `projectList` yang menyimpan daftar objek proyek.
+### Tahap 2: Pembaruan Komponen `About.tsx` (Experience, Education, Certifications)
+1. **Buka file** `src/components/sections/About.tsx`.
+2. **Modifikasi Array Data:**
+   - Pada array `experiences`, tambahkan *property* baru `logo: "/images/nama-logo.png"` (atau URL eksternal) pada setiap objek.
+   - Pada array `education`, tambahkan *property* `logo: "..."`.
+   - Pada array `certifications`, tambahkan *property* `logo: "..."` dan `credentialUrl: "https://..."`.
+3. **Modifikasi Antarmuka (UI):**
+   - Cari bagian kode yang merender (melakukan `.map`) daftar *Experience*. Tambahkan tag `<img>` atau Next.js `<Image>` di sebelah kiri nama *role* atau perusahaan untuk menampilkan logo tersebut. Sesuaikan ukuran logo (misal: `w-12 h-12 rounded-md object-contain`).
+   - Lakukan hal yang sama untuk bagian *Education* dan *Certifications*.
+   - Pada *Certifications*, bungkus judul atau buat tombol khusus "Show Credential" menggunakan *tag* `<a>` yang mengarah ke `credentialUrl` dengan `target="_blank"`.
 
-3.  **Penambahan Data Proyek:**
-    Tambahkan objek JSON baru yang berisi data proyek di atas ke dalam array `projectList`.
-    *Penting:* Letakkan objek baru ini di baris pertama di dalam array (di indeks ke-0), tepat sebelum proyek `"vits-project"`, agar proyek terbaru muncul di posisi paling awal saat halaman dimuat.
+### Tahap 3: Pembaruan Komponen Proyek (`Projects.tsx` & `ProjectCard.tsx`)
+1. **Buka file** `src/components/sections/Projects.tsx`.
+2. Pada array `projectList`, ganti *property* `gradient` menjadi `imageUrl: "/images/nama-project.png"` (atau gunakan URL eksternal) untuk setiap proyek yang memiliki gambar di LinkedIn.
+3. **Buka file** `src/components/ProjectCard.tsx`.
+4. Tambahkan properti `imageUrl?: string` di dalam interface `ProjectCardProps`.
+5. Pada bagian kode yang saat ini menampilkan kotak gradien dekoratif (baris kode `<div className={\`h-48 w-full bg-gradient-to-br \${gradient} ...\`} >`), ubah kondisinya:
+   - Jika `imageUrl` ada, tampilkan `<img src={imageUrl} alt={title} className="w-full h-full object-cover" />`.
+   - Jika `imageUrl` kosong, tetap gunakan gaya gradien dekoratif sebagai *fallback*.
 
-    *Contoh format objek:*
-    ```javascript
-    {
-      title: "Digital Wedding Invitation Platform",
-      description: "Developed a responsive and interactive Digital Wedding Invitation web application designed to provide a seamless user experience for digital event invitations. Key features include dynamic guest management, personalized link generation, RSVP tracking, digital guestbook/wishes, and integrated Google Maps for venue navigation. Structured an optimized relational database to efficiently handle RSVP data and digital wishes storage.",
-      tags: ["Web App", "Responsive Design", "Relational Database", "Google Maps", "RSVP"],
-      githubUrl: "https://github.com/mhderdnsyh",
-      demoUrl: "https://surya-juni-wedding.vercel.app/",
-      gradient: "from-rose-600/70 via-pink-600/70 to-red-600/70",
-    }
-    ```
-
-4.  **Verifikasi (Testing Lokal):**
-    *   Simpan file `Projects.tsx`.
-    *   Buka terminal dan jalankan server *development* dengan perintah `npm run dev`.
-    *   Buka browser dan gulir (scroll) ke bagian "Portfolio" / "Featured Projects".
-    *   Pastikan kartu (*card*) proyek "Digital Wedding Invitation Platform" muncul di urutan pertama.
-    *   Cek kesesuaian teks deskripsi, apakah terpotong dengan baik atau rapi, serta pastikan warna gradient card berfungsi dengan baik.
+### Tahap 4: Verifikasi & Styling
+1. Jalankan `npm run dev`.
+2. Pastikan semua gambar berhasil dimuat tanpa *error* 404.
+3. Cek responsivitas ukuran logo dan *thumbnail* gambar di HP dan Desktop agar tidak pecah atau menutupi teks.
+4. Klik tombol/link *credential* untuk memastikan tautan mengarah ke halaman LinkedIn/penyedia sertifikat yang benar.

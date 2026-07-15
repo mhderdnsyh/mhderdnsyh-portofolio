@@ -25,6 +25,7 @@ interface ProjectCardProps {
   tags: string[];
   githubUrl: string;
   demoUrl?: string;
+  imageUrl?: string;
   gradient: string;
 }
 
@@ -34,6 +35,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   tags,
   githubUrl,
   demoUrl,
+  imageUrl,
   gradient,
 }) => {
   return (
@@ -45,15 +47,21 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       whileHover={{ y: -8 }}
       className="glass-card rounded-2xl overflow-hidden flex flex-col h-full group hover:border-indigo-500/30 transition-colors duration-300"
     >
-      {/* Decorative Gradient Visual Thumbnail */}
-      <div className={`h-48 w-full bg-gradient-to-br ${gradient} flex items-center justify-center p-6 relative overflow-hidden`}>
-        {/* Abstract grid lines overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none"></div>
-        {/* Animated code/tech circle decoration */}
-        <div className="w-24 h-24 rounded-full bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-500">
-          <span className="font-mono text-xs text-white/50">&lt;code /&gt;</span>
+      {/* Visual Thumbnail */}
+      {imageUrl ? (
+        <div className="h-48 w-full relative overflow-hidden group-hover:opacity-90 transition-opacity">
+          <img src={imageUrl} alt={title} className="w-full h-full object-cover" />
         </div>
-      </div>
+      ) : (
+        <div className={`h-48 w-full bg-gradient-to-br ${gradient} flex items-center justify-center p-6 relative overflow-hidden`}>
+          {/* Abstract grid lines overlay */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none"></div>
+          {/* Animated code/tech circle decoration */}
+          <div className="w-24 h-24 rounded-full bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-500">
+            <span className="font-mono text-xs text-white/50">&lt;code /&gt;</span>
+          </div>
+        </div>
+      )}
 
       {/* Content */}
       <div className="p-6 flex flex-col flex-grow">
