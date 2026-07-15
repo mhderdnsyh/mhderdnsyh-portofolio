@@ -41,6 +41,7 @@ export const About: React.FC = () => {
       role: "Backup Store Leader",
       company: "Sports Station (PT. Mitra Adiperkasa Tbk)",
       logo: "/images/logo-sports-station.png",
+      documentationImage: "/images/morning-briefing.png",
       location: "Pekanbaru, Indonesia",
       period: "Jul 2026 - Present",
       points: [
@@ -301,6 +302,20 @@ export const About: React.FC = () => {
                           </li>
                         ))}
                       </ul>
+                      
+                      {/* Documentation Image */}
+                      {exp.documentationImage && (
+                        <div className="mt-4 border border-white/10 rounded-xl overflow-hidden bg-white/5 relative group/img">
+                          <img 
+                            src={exp.documentationImage} 
+                            alt={`Documentation for ${exp.role} at ${exp.company}`}
+                            className="w-full h-auto max-h-[300px] object-cover object-center md:object-contain group-hover/img:scale-105 transition-transform duration-500" 
+                          />
+                          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                            <span className="text-white text-xs font-mono font-bold tracking-widest uppercase bg-black/50 px-3 py-1 rounded-full border border-white/20">Documentation</span>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </motion.div>
