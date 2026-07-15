@@ -1,0 +1,7 @@
+saya akan membuat portofolio saya 
+Buatkan issue.md yang berisi perencanaan untuk nanti di implementasikan oleh junior programmer atau ai model yang lebih murah.
+
+Isi dari planningnya adalah bikinkan: 
+ tolong bikinkan frontendnya menggunakan techstack atau teknologi serta framework yang dibutuhkan dan yang paling cocok untuk proyek ini dan jelaskan kenapa harus menggunakan techstact atau teknologi tersebut
+
+Jelaskan tahapan-tahapan yang harus dilakukan untuk mengimplementasikan fitur ini, anggap nanti yang mengimplementasikan adalah junior programmer atau ai model yang lebih murah

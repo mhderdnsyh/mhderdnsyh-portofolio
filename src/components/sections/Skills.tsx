@@ -9,22 +9,22 @@ export const Skills: React.FC = () => {
     {
       title: "Frontend Development",
       icon: <Laptop size={20} className="text-indigo-400" />,
-      skills: ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"],
+      skills: ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Next.js", "Bootstrap", "Tailwind CSS"],
     },
     {
       title: "Backend & Database",
       icon: <Database size={20} className="text-purple-400" />,
-      skills: ["PHP", "Java (Android)", "Node.js", "Express", "MySQL", "Rest APIs"],
+      skills: ["PHP", "Laravel", "CodeIgniter", "MySQL", "PL/SQL (Database Design)", "REST APIs", "Node.js"],
     },
     {
-      title: "AI & Machine Learning",
+      title: "AI & Speech Technology",
       icon: <BrainCircuit size={20} className="text-cyan-400" />,
-      skills: ["Python", "PyTorch", "Jupyter Notebook", "Speech Synthesis (VITS)", "Dataset Prep"],
+      skills: ["Python", "PyTorch", "Speech Synthesis (VITS)", "Machine Learning (Beginner)", "Dataset Prep", "Jupyter Notebook"],
     },
     {
-      title: "Tools & Deployments",
+      title: "Tools & Design Systems",
       icon: <Wrench size={20} className="text-emerald-400" />,
-      skills: ["Git", "GitHub", "VS Code", "npm / Node", "Vercel", "Postman"],
+      skills: ["Git", "GitHub", "Figma", "Canva", "VS Code", "Vercel", "Microsoft Office"],
     },
   ];
 

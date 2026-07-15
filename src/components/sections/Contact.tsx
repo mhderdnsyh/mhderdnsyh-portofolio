@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "../Button";
-import { Mail, Send, CheckCircle2, MessageSquare } from "lucide-react";
+import { Mail, Send, CheckCircle2, MessageSquare, Phone } from "lucide-react";
 
 const LinkedinIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -98,7 +98,7 @@ export const Contact: React.FC = () => {
             {/* Quick Contact Info Cards */}
             <div className="flex flex-col gap-4">
               <a
-                href="mailto:erdiansyah@example.com"
+                href="mailto:muhammaderdiansyah27@gmail.com"
                 className="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-indigo-500/20 transition-all group"
               >
                 <div className="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:scale-110 transition-transform">
@@ -106,7 +106,20 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-zinc-500 text-xs font-mono">EMAIL DIRECT</p>
-                  <p className="text-white text-sm font-medium">erdiansyah@example.com</p>
+                  <p className="text-white text-sm font-medium">muhammaderdiansyah27@gmail.com</p>
+                </div>
+              </a>
+
+              <a
+                href="tel:+6285161312203"
+                className="glass-card p-4 rounded-xl flex items-center gap-4 hover:border-indigo-500/20 transition-all group"
+              >
+                <div className="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
+                  <Phone size={20} />
+                </div>
+                <div>
+                  <p className="text-zinc-500 text-xs font-mono">PHONE / WHATSAPP</p>
+                  <p className="text-white text-sm font-medium">+62 8516 1312 203</p>
                 </div>
               </a>
 
@@ -121,7 +134,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-zinc-500 text-xs font-mono">LINKEDIN</p>
-                  <p className="text-white text-sm font-medium">muhammad-erdiansyah</p>
+                  <p className="text-white text-sm font-medium">muhammad-erdiansyah-teknik-informatika</p>
                 </div>
               </a>
 

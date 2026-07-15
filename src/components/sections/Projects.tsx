@@ -15,6 +15,14 @@ export const Projects: React.FC = () => {
       gradient: "from-orange-600/70 via-red-600/70 to-pink-600/70",
     },
     {
+      title: "Hadith Search Application (Sunan Abu Dawud)",
+      description:
+        "A web-based search and filtering system for Hadith collection Sunan Abu Dawud. Built during an internship at Lab Inkubator UIN SUSKA Riau to provide efficient access to hadith references.",
+      tags: ["Laravel", "MySQL", "PHP", "Bootstrap", "HTML5", "CSS3"],
+      githubUrl: "https://github.com/mhderdnsyh",
+      gradient: "from-emerald-600/70 via-teal-600/70 to-cyan-600/70",
+    },
+    {
       title: "absensi_sd37pku",
       description:
         "A web-based attendance management system built for SD37 Pekanbaru. Enables automated tracking of student and teacher presence, reports generation, and streamlined administrative checks.",
@@ -37,6 +45,22 @@ export const Projects: React.FC = () => {
       tags: ["PHP", "MySQL", "HTML5", "CSS3", "Bootstrap"],
       githubUrl: "https://github.com/mhderdnsyh/Aisya2",
       gradient: "from-purple-600/70 via-fuchsia-600/70 to-pink-600/70",
+    },
+    {
+      title: "Web-based Inventory System",
+      description:
+        "A responsive CRUD application for managing stock, supplier logs, and inventory assets. Developed as a database-driven mini project.",
+      tags: ["PHP Native", "MySQL", "Bootstrap", "HTML5", "CSS3"],
+      githubUrl: "https://github.com/mhderdnsyh",
+      gradient: "from-zinc-700/70 via-slate-700/70 to-neutral-700/70",
+    },
+    {
+      title: "Lipatkain Utara Village Landing Page",
+      description:
+        "A localized landing page website developed during the KKN (Community Service) program to highlight public information services, village announcements, and administrative profiles.",
+      tags: ["HTML5", "CSS3", "Bootstrap", "JavaScript", "Design Assets"],
+      githubUrl: "https://github.com/mhderdnsyh",
+      gradient: "from-lime-600/70 via-green-600/70 to-emerald-600/70",
     },
   ];
 
