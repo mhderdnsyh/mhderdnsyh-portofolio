@@ -40,7 +40,6 @@ export const About: React.FC = () => {
     {
       role: "Backup Store Leader",
       company: "Sports Station (PT. Mitra Adiperkasa Tbk)",
-      logo: "/images/logo-sports-station.png",
       documentationImage: "/images/morning-briefing.png",
       location: "Pekanbaru, Indonesia",
       period: "Jul 2026 - Present",
@@ -55,7 +54,7 @@ export const About: React.FC = () => {
     {
       role: "Backup Store Leader",
       company: "Puma (PT. Mitra Adiperkasa Tbk)",
-      logo: "/images/logo-puma.png",
+      documentationImage: "/images/dokumentasi-puma.png",
       location: "Pekanbaru, Indonesia",
       period: "Mar 2026 - Jun 2026",
       points: [
@@ -66,7 +65,7 @@ export const About: React.FC = () => {
     {
       role: "Store Associate",
       company: "Sports Station (PT. Mitra Adiperkasa Tbk)",
-      logo: "/images/logo-sports-station.png",
+      documentationImage: "/images/dokumentasi-sports-station.png",
       location: "Pekanbaru, Indonesia",
       period: "Mar 2024 - Feb 2026",
       points: [
@@ -79,7 +78,7 @@ export const About: React.FC = () => {
     {
       role: "Intern Frontend / Backend Developer",
       company: "Lab Inkubator Universitas Islam Negeri Sultan Syarif Kasim Riau",
-      logo: "/images/logo-uin.png",
+      documentationImage: "/images/dokumentasi-intern.png",
       location: "Pekanbaru, Indonesia",
       period: "Jan 2023 - Feb 2023",
       points: [
@@ -92,7 +91,7 @@ export const About: React.FC = () => {
     {
       role: "KPPS (Polling Station Working Committee)",
       company: "General Election Commission (KPU)",
-      logo: "/images/logo-kpu.png",
+      documentationImage: "/images/dokumentasi-kpps.png",
       location: "Pekanbaru, Indonesia",
       period: "Feb 2024",
       points: [
@@ -103,7 +102,7 @@ export const About: React.FC = () => {
     {
       role: "Enumerator (Surveyor)",
       company: "Statistics Indonesia (BPS - Regsosek 2022)",
-      logo: "/images/logo-bps.png",
+      documentationImage: "/images/dokumentasi-bps.png",
       location: "Pekanbaru, Indonesia",
       period: "Oct - Nov 2022",
       points: [
@@ -116,7 +115,6 @@ export const About: React.FC = () => {
     {
       degree: "Bachelor of Informatics Engineering",
       institution: "Universitas Islam Negeri Sultan Syarif Kasim Riau",
-      logo: "/images/logo-uin.png",
       period: "May 2020 - July 2025",
       grade: "GPA: 3.64 / 4.00",
       thesis: "Text-to-Speech (TTS) for East Javanese Blitar Dialect using VITS (Python, PyTorch)",
@@ -125,13 +123,13 @@ export const About: React.FC = () => {
   ];
 
   const certifications = [
-    { title: "Figma for UI/UX Design", issuer: "Udemy", logo: "/images/logo-udemy.png", credentialUrl: "#", date: "Aug 2025" },
-    { title: "Flutter Development: From Basic to Advanced UI", issuer: "Udemy", logo: "/images/logo-udemy.png", credentialUrl: "#", date: "Aug 2025" },
-    { title: "Database Programming with PL/SQL", issuer: "Oracle Academy", logo: "/images/logo-oracle.png", credentialUrl: "#", date: "Jun 2022" },
-    { title: "Database Programming with SQL", issuer: "Oracle Academy", logo: "/images/logo-oracle.png", credentialUrl: "#", date: "Dec 2021" },
-    { title: "PHP Course", issuer: "Sololearn", logo: "/images/logo-sololearn.png", credentialUrl: "#", date: "Jun 2022" },
-    { title: "JavaScript Course", issuer: "Sololearn", logo: "/images/logo-sololearn.png", credentialUrl: "#", date: "Apr 2022" },
-    { title: "UI/UX Design for Beginner", issuer: "Dibimbing.id", logo: "/images/logo-dibimbing.png", credentialUrl: "#", date: "Jan 2022" },
+    { title: "Figma for UI/UX Design", issuer: "Udemy", credentialUrl: "#", date: "Aug 2025" },
+    { title: "Flutter Development: From Basic to Advanced UI", issuer: "Udemy", credentialUrl: "#", date: "Aug 2025" },
+    { title: "Database Programming with PL/SQL", issuer: "Oracle Academy", credentialUrl: "#", date: "Jun 2022" },
+    { title: "Database Programming with SQL", issuer: "Oracle Academy", credentialUrl: "#", date: "Dec 2021" },
+    { title: "PHP Course", issuer: "Sololearn", credentialUrl: "#", date: "Jun 2022" },
+    { title: "JavaScript Course", issuer: "Sololearn", credentialUrl: "#", date: "Apr 2022" },
+    { title: "UI/UX Design for Beginner", issuer: "Dibimbing.id", credentialUrl: "#", date: "Jan 2022" },
   ];
 
   const communities = [
@@ -272,16 +270,11 @@ export const About: React.FC = () => {
                       <span className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-zinc-900 border-2 border-indigo-500 group-hover:bg-indigo-400 group-hover:scale-110 transition-all duration-300"></span>
 
                       <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
-                        <div className="flex items-start gap-4">
-                          {exp.logo && (
-                            <img src={exp.logo} alt={exp.company} className="w-10 h-10 object-contain rounded-md bg-white/5 border border-white/10 p-1 mt-1" />
-                          )}
-                          <div>
-                            <h5 className="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors">
-                              {exp.role}
-                            </h5>
-                            <p className="text-zinc-400 text-sm font-mono">{exp.company}</p>
-                          </div>
+                        <div>
+                          <h5 className="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors">
+                            {exp.role}
+                          </h5>
+                          <p className="text-zinc-400 text-sm font-mono">{exp.company}</p>
                         </div>
                         <div className="flex flex-col md:items-end gap-1 text-xs font-mono text-zinc-500">
                           <span className="flex items-center gap-1.5">
@@ -335,16 +328,11 @@ export const About: React.FC = () => {
                       <span className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-zinc-900 border-2 border-purple-500 group-hover:bg-purple-400 group-hover:scale-110 transition-all duration-300"></span>
 
                       <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
-                        <div className="flex items-start gap-4">
-                          {edu.logo && (
-                            <img src={edu.logo} alt={edu.institution} className="w-12 h-12 object-contain rounded-md bg-white/5 border border-white/10 p-1" />
-                          )}
-                          <div>
-                            <h5 className="text-lg font-bold text-white group-hover:text-purple-400 transition-colors">
-                              {edu.degree}
-                            </h5>
-                            <p className="text-zinc-400 text-sm font-mono">{edu.institution}</p>
-                          </div>
+                        <div>
+                          <h5 className="text-lg font-bold text-white group-hover:text-purple-400 transition-colors">
+                            {edu.degree}
+                          </h5>
+                          <p className="text-zinc-400 text-sm font-mono">{edu.institution}</p>
                         </div>
                         <div className="flex flex-col md:items-end gap-1 text-xs font-mono text-zinc-500">
                           <span className="flex items-center gap-1.5">
@@ -395,16 +383,11 @@ export const About: React.FC = () => {
                           key={idx}
                           className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-500/20 hover:bg-white/10 transition-all flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 group"
                         >
-                          <div className="flex items-center gap-4">
-                            {cert.logo && (
-                              <img src={cert.logo} alt={cert.issuer} className="w-10 h-10 object-contain rounded-md bg-white/10 p-1" />
-                            )}
-                            <div>
-                              <p className="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors">
-                                {cert.title}
-                              </p>
-                              <p className="text-xs text-zinc-500 font-mono mt-0.5">{cert.issuer}</p>
-                            </div>
+                          <div>
+                            <p className="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors">
+                              {cert.title}
+                            </p>
+                            <p className="text-xs text-zinc-500 font-mono mt-0.5">{cert.issuer}</p>
                           </div>
                           
                           <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
