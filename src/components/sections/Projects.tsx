@@ -35,7 +35,7 @@ export const Projects: React.FC = () => {
       tags: ["Laravel", "MySQL", "PHP", "Bootstrap", "HTML5", "CSS3"],
       githubUrl: "https://github.com/mhderdnsyh",
       images: [
-        "/images/documentation-project-hadith-sunan-abu-dawud",
+        "/images/documentation-project-hadith-sunan-abu-dawud.png",
         "/images/documentation-intern-lab-inkubator.png",
         "/images/documentation-intern-lab-inkubator-2.png",
       ],
@@ -61,7 +61,15 @@ export const Projects: React.FC = () => {
         "An interactive Android mobile application designed as a localized thrift shop marketplace. Developed using native Java code and Firebase backend integration.",
       tags: ["Java", "Android SDK", "Firebase", "Mobile UI"],
       githubUrl: "https://github.com/mhderdnsyh/Thriftskuy",
-      imageUrl: "",
+      images: [
+        "/images/documentation-project-thriftskuy.png",
+        "/images/documentation-project-thriftskuy-2.png",
+        "/images/documentation-project-thriftskuy-3.png",
+        "/images/documentation-project-thriftskuy-4.png",
+        "/images/documentation-project-thriftskuy-5.png",
+        "/images/documentation-project-thriftskuy-6.png",
+        "/images/documentation-project-thriftskuy-7.png",
+      ],
       gradient: "from-teal-600/70 via-cyan-600/70 to-blue-600/70",
     },
     {
