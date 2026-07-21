@@ -64,11 +64,6 @@ export const Projects: React.FC = () => {
       images: [
         "/images/documentation-project-thriftskuy.png",
         "/images/documentation-project-thriftskuy-2.png",
-        "/images/documentation-project-thriftskuy-3.png",
-        "/images/documentation-project-thriftskuy-4.png",
-        "/images/documentation-project-thriftskuy-5.png",
-        "/images/documentation-project-thriftskuy-6.png",
-        "/images/documentation-project-thriftskuy-7.png",
       ],
       gradient: "from-teal-600/70 via-cyan-600/70 to-blue-600/70",
     },
