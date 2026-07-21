@@ -43,7 +43,7 @@ export const Projects: React.FC = () => {
         "A web-based attendance management system built for SD37 Pekanbaru. Enables automated tracking of student and teacher presence, reports generation, and streamlined administrative checks.",
       tags: ["PHP", "MySQL", "JavaScript", "HTML5", "CSS3"],
       githubUrl: "https://github.com/mhderdnsyh/absensi_sd37pku",
-      imageUrl: "",
+      imageUrl: "/images/documentation-project-absensi-sdn-37.png",
       gradient: "from-blue-600/70 via-indigo-600/70 to-purple-600/70",
     },
     {
