@@ -34,7 +34,11 @@ export const Projects: React.FC = () => {
         "A web-based search and filtering system for Hadith collection Sunan Abu Dawud. Built during an internship at Lab Inkubator UIN SUSKA Riau to provide efficient access to hadith references.",
       tags: ["Laravel", "MySQL", "PHP", "Bootstrap", "HTML5", "CSS3"],
       githubUrl: "https://github.com/mhderdnsyh",
-      imageUrl: "",
+      images: [
+        "/images/documentation-project-hadith-sunan-abu-dawud",
+        "/images/documentation-intern-lab-inkubator.png",
+        "/images/documentation-intern-lab-inkubator-2.png",
+      ],
       gradient: "from-emerald-600/70 via-teal-600/70 to-cyan-600/70",
     },
     {
