@@ -14,6 +14,7 @@ import {
   MapPin,
   CheckCircle2,
   BookOpen,
+  ExternalLink,
 } from "lucide-react";
 
 interface ImageWithFallbackProps {
@@ -182,21 +183,21 @@ export const About: React.FC = () => {
   ];
 
   const certifications = [
-    { title: "Figma for UI/UX Design", issuer: "Udemy", logo: "", credentialUrl: "/images/documentation-certificate-figma.png", date: "Aug 2025" },
-    { title: "Flutter Development: From Basic to Advanced UI", issuer: "Udemy", logo: "", credentialUrl: "/images/documentation-certificate-flutter.png", date: "Aug 2025" },
+    { title: "Figma for UI/UX Design", issuer: "Udemy", logo: "", credentialUrl: "/images/documentation-certificate-figma.png", verificationUrl: "https://www.udemy.com/certificate/UC-5ff9a572-7ff2-4e15-9df1-24d5ea4d0293/", date: "Aug 2025" },
+    { title: "Flutter Development: From Basic to Advanced UI", issuer: "Udemy", logo: "", credentialUrl: "/images/documentation-certificate-flutter.png", verificationUrl: "https://www.udemy.com/certificate/UC-3a476c69-e2e5-4eb8-aa56-d164fbee2d29/", date: "Aug 2025" },
     { title: "Database Programming with PL/SQL", issuer: "Oracle Academy", logo: "", credentialUrl: "/images/documentation-certificate-database-programming-with-pl-sql.png", date: "Jun 2022" },
-    { title: "Database Programming with SQL", issuer: "Oracle Academy", logo: "", credentialUrl: "/images/documentation-certificate-database-programming-with-sql.png", date: "Dec 2021" },
+    { title: "Database Programming with SQL", issuer: "Oracle Academy", logo: "", credentialUrl: "/images/documentation-certificate-database-programming-with-sql.png", verificationUrl: "https://www.sololearn.com/en/certificates/CT-B55TSRAN", date: "Dec 2021" },
     { title: "Database Design", issuer: "Oracle Academy", logo: "", credentialUrl: "/images/documentation-certificate-database-design.png", date: "Dec 2021" },
-    { title: "PHP Course", issuer: "Sololearn", logo: "", credentialUrl: "/images/documentation-certificate-php.png", date: "Jun 2022" },
-    { title: "JavaScript Course", issuer: "Sololearn", logo: "", credentialUrl: "/images/documentation-certificate-javascript.png", date: "Apr 2022" },
+    { title: "PHP Course", issuer: "Sololearn", logo: "", credentialUrl: "/images/documentation-certificate-php.png", verificationUrl: "https://www.sololearn.com/en/certificates/CT-SORARNOU", date: "Jun 2022" },
+    { title: "JavaScript Course", issuer: "Sololearn", logo: "", credentialUrl: "/images/documentation-certificate-javascript.png", verificationUrl: "https://www.sololearn.com/en/certificates/CT-MAJAPXOJ", date: "Apr 2022" },
     { title: "UI/UX Design for Beginner", issuer: "Dibimbing.id", logo: "", credentialUrl: "/images/documentation-certficate-ui-ux-designer.png", date: "Jan 2022" },
-    { title: "Responsive Web Design", issuer: "Sololearn", logo: "", credentialUrl: "/images/documentation-certficate-responsive-web-design.png", date: "Jun 2022" },
-    { title: "CSS Course", issuer: "Sololearn", logo: "", credentialUrl: "/images/documentation-certificate-css.png", date: "Jun 2022" },
-    { title: "HTML & CSS Course", issuer: "Sololearn", logo: "", credentialUrl: "/images/documentation-certficate-html-css.png", date: "Jun 2022" },
-    { title: "Web Development Fundamentals", issuer: "Sololearn", logo: "", credentialUrl: "/images/documentation-certificate-web-development-fundamentals.png", date: "Jun 2022" },
-    { title: "Microsoft Office Specialist", issuer: "Microsoft", logo: "", credentialUrl: "/images/documentation-certificate-microsoft-office.png", date: "Jan 2022" },
-    { title: "Teknisi Jaringan (Network Technician)", issuer: "BNSP", logo: "", credentialUrl: "/images/documentation-certificate-teknisi-jaringan.png", date: "2023" },
-    { title: "TOEFL English Proficiency", issuer: "ETS", logo: "", credentialUrl: "/images/documentation-certificate-toefl.png", date: "2024" },
+    { title: "Responsive Web Design", issuer: "Sololearn", logo: "", credentialUrl: "/images/documentation-certficate-responsive-web-design.png", verificationUrl: "https://www.sololearn.com/en/certificates/CT-DTM5QDXP", date: "Jun 2022" },
+    { title: "CSS Course", issuer: "Sololearn", logo: "", credentialUrl: "/images/documentation-certificate-css.png", verificationUrl: "https://www.sololearn.com/en/certificates/CT-OQ4L9X4Y", date: "Jun 2022" },
+    { title: "HTML & CSS Course", issuer: "Sololearn", logo: "", credentialUrl: "/images/documentation-certficate-html-css.png", verificationUrl: "https://progate.com/course_certificate/7d5648a3r3itnm", date: "Jun 2022" },
+    { title: "Web Development Fundamentals", issuer: "Sololearn", logo: "", credentialUrl: "/images/documentation-certificate-web-development-fundamentals.png", verificationUrl: "https://www.sololearn.com/en/certificates/CT-PJU35T0D", date: "Jun 2022" },
+    { title: "Microsoft Office Specialist", issuer: "Microsoft", logo: "", credentialUrl: "/images/documentation-certificate-microsoft-office.png", verificationUrl: "https://www.udemy.com/certificate/UC-585ad962-7292-4b3d-8e0d-c57efd1950e7/", date: "Jan 2022" },
+    { title: "Teknisi Jaringan (Network Technician)", issuer: "BNSP", logo: "", credentialUrl: "/images/documentation-certificate-teknisi-jaringan.png", verificationUrl: "https://cdn.karier.mu/certificate/sertifikat-sekolahmu-cHJvZ3JhbV91c2VyLTI5Mjk5MDI=1619434989.pdf", date: "2023" },
+    { title: "TOEFL English Proficiency", issuer: "ETS", logo: "", credentialUrl: "/images/documentation-certificate-toefl.png", verificationUrl: "https://www.e-ujian.com/cert/yYaFvF.110866", date: "2024" },
   ];
 
   const communities = [
@@ -484,20 +485,33 @@ export const About: React.FC = () => {
                             </div>
                           </div>
                           
-                          <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
+                          <div className="flex items-center gap-2.5 w-full sm:w-auto justify-between sm:justify-end flex-wrap sm:flex-nowrap">
                             <span className="text-[10px] font-mono text-zinc-500 bg-zinc-900 px-2.5 py-1 rounded-full flex-shrink-0">
                               {cert.date}
                             </span>
-                            {cert.credentialUrl && cert.credentialUrl !== "#" && (
-                              <a
-                                href={cert.credentialUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-xs font-medium text-cyan-400 hover:text-cyan-300 border border-cyan-500/30 hover:bg-cyan-500/10 px-3 py-1 rounded-full transition-all whitespace-nowrap"
-                              >
-                                Show Credential
-                              </a>
-                            )}
+                            <div className="flex items-center gap-2">
+                              {cert.credentialUrl && cert.credentialUrl !== "#" && (
+                                <a
+                                  href={cert.credentialUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-xs font-medium text-zinc-300 hover:text-white border border-white/10 hover:bg-white/10 px-3 py-1 rounded-full transition-all whitespace-nowrap"
+                                >
+                                  View Image
+                                </a>
+                              )}
+                              {cert.verificationUrl && cert.verificationUrl !== "#" && (
+                                <a
+                                  href={cert.verificationUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-xs font-medium text-cyan-400 hover:text-cyan-300 border border-cyan-500/30 hover:bg-cyan-500/10 px-3 py-1 rounded-full transition-all whitespace-nowrap flex items-center gap-1.5"
+                                >
+                                  <span>Verify Link</span>
+                                  <ExternalLink size={12} />
+                                </a>
+                              )}
+                            </div>
                           </div>
                         </div>
                       ))}
