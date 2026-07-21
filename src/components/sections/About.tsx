@@ -142,7 +142,7 @@ export const About: React.FC = () => {
     {
       role: "KPPS (Polling Station Working Committee)",
       company: "General Election Commission (KPU)",
-      logo: "",
+      logo: "/images/logo-kpps.png",
       documentationImages: [],
       location: "Pekanbaru, Indonesia",
       period: "Feb 2024",
@@ -197,7 +197,7 @@ export const About: React.FC = () => {
     { title: "Web Development Fundamentals", issuer: "Sololearn", logo: "/images/logo-solo-learn.png", credentialUrl: "/images/documentation-certificate-web-development-fundamentals.png", verificationUrl: "https://www.sololearn.com/en/certificates/CT-PJU35T0D", date: "Jun 2022" },
     { title: "Microsoft Office Specialist", issuer: "Microsoft", logo: "/images/logo-microsoft.png", credentialUrl: "/images/documentation-certificate-microsoft-office.png", verificationUrl: "https://www.udemy.com/certificate/UC-585ad962-7292-4b3d-8e0d-c57efd1950e7/", date: "Jan 2022" },
     { title: "Teknisi Jaringan (Network Technician)", issuer: "BNSP", logo: "/images/logo-sekolahmu.png", credentialUrl: "/images/documentation-certificate-teknisi-jaringan.png", verificationUrl: "https://cdn.karier.mu/certificate/sertifikat-sekolahmu-cHJvZ3JhbV91c2VyLTI5Mjk5MDI=1619434989.pdf", date: "2023" },
-    { title: "TOEFL English Proficiency", issuer: "ETS", logo: "", credentialUrl: "/images/documentation-certificate-toefl.png", verificationUrl: "https://www.e-ujian.com/cert/yYaFvF.110866", date: "2024" },
+    { title: "TOEFL English Proficiency", issuer: "ETS", logo: "/images/logo-ets.png", credentialUrl: "/images/documentation-certificate-toefl.png", verificationUrl: "https://www.e-ujian.com/cert/yYaFvF.110866", date: "2024" },
   ];
 
   const communities = [
