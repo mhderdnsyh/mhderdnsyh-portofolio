@@ -204,6 +204,7 @@ export const About: React.FC = () => {
       role: "Information & Communication (Infokom) Division",
       org: "Community Service Program (KKN) – Lipatkain Utara Village, Kampar Kiri",
       period: "Jul – Aug 2023",
+      documentationImages: ["/images/documentation-project-website-lipat-kain-utara.png"],
       desc: "Designed communication media (flyers, ID cards, banners) and developed a landing page website highlighting local profiles and public information services.",
     },
     {
@@ -512,16 +513,24 @@ export const About: React.FC = () => {
                       {communities.map((comm, idx) => (
                         <div
                           key={idx}
-                          className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-indigo-500/20 transition-all"
+                          className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-indigo-500/20 transition-all flex flex-col justify-between"
                         >
-                          <div className="flex justify-between items-start gap-2 mb-2">
-                            <h6 className="text-sm font-bold text-white">{comm.role}</h6>
-                            <span className="text-[10px] font-mono text-zinc-500 bg-zinc-900 px-2 py-0.5 rounded-full flex-shrink-0">
-                              {comm.period}
-                            </span>
+                          <div>
+                            <div className="flex justify-between items-start gap-2 mb-2">
+                              <h6 className="text-sm font-bold text-white">{comm.role}</h6>
+                              <span className="text-[10px] font-mono text-zinc-500 bg-zinc-900 px-2 py-0.5 rounded-full flex-shrink-0">
+                                {comm.period}
+                              </span>
+                            </div>
+                            <p className="text-xs font-mono text-indigo-400 mb-2">{comm.org}</p>
+                            <p className="text-xs text-zinc-400 leading-relaxed">{comm.desc}</p>
                           </div>
-                          <p className="text-xs font-mono text-indigo-400 mb-2">{comm.org}</p>
-                          <p className="text-xs text-zinc-400 leading-relaxed">{comm.desc}</p>
+                          {comm.documentationImages && comm.documentationImages.length > 0 && (
+                            <DocumentationCarousel
+                              images={comm.documentationImages}
+                              alt={`Documentation for ${comm.role}`}
+                            />
+                          )}
                         </div>
                       ))}
                     </div>
