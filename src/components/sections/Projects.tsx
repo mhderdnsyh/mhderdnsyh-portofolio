@@ -15,6 +15,7 @@ export const Projects: React.FC = () => {
       images: [
         "/images/documentation-project-wedding-surya-juni-3.png",
         "/images/documentation-project-wedding-surya-juni-1.png",
+        "/images/documentation-project-wedding-surya-juni-4.png",
         "/images/documentation-project-wedding-surya-juni.png",
       ],
       gradient: "from-rose-600/70 via-pink-600/70 to-red-600/70",
