@@ -12,7 +12,7 @@ export const Projects: React.FC = () => {
       tags: ["Web App", "Responsive Design", "Relational Database", "Google Maps", "RSVP"],
       githubUrl: "https://github.com/mhderdnsyh",
       demoUrl: "https://surya-juni-wedding.vercel.app/",
-      imageUrl: "/images/project-digital-wedding.jpg",
+      imageUrl: "/images/documentation-project-wedding-surya-juni-3.png",
       gradient: "from-rose-600/70 via-pink-600/70 to-red-600/70",
     },
     {
@@ -21,6 +21,7 @@ export const Projects: React.FC = () => {
         "Developed a Javanese dialect Text-to-Speech (TTS) system using VITS (Variational Inference with adversarial learning). Handled dataset synthesis (LJSpeech format) and model optimization using Python & PyTorch.",
       tags: ["Jupyter Notebook", "Python", "PyTorch", "TTS", "VITS"],
       githubUrl: "https://github.com/mhderdnsyh/vits-project",
+      imageUrl: "",
       gradient: "from-orange-600/70 via-red-600/70 to-pink-600/70",
     },
     {
@@ -29,6 +30,7 @@ export const Projects: React.FC = () => {
         "A web-based search and filtering system for Hadith collection Sunan Abu Dawud. Built during an internship at Lab Inkubator UIN SUSKA Riau to provide efficient access to hadith references.",
       tags: ["Laravel", "MySQL", "PHP", "Bootstrap", "HTML5", "CSS3"],
       githubUrl: "https://github.com/mhderdnsyh",
+      imageUrl: "",
       gradient: "from-emerald-600/70 via-teal-600/70 to-cyan-600/70",
     },
     {
@@ -37,6 +39,7 @@ export const Projects: React.FC = () => {
         "A web-based attendance management system built for SD37 Pekanbaru. Enables automated tracking of student and teacher presence, reports generation, and streamlined administrative checks.",
       tags: ["PHP", "MySQL", "JavaScript", "HTML5", "CSS3"],
       githubUrl: "https://github.com/mhderdnsyh/absensi_sd37pku",
+      imageUrl: "",
       gradient: "from-blue-600/70 via-indigo-600/70 to-purple-600/70",
     },
     {
@@ -45,6 +48,7 @@ export const Projects: React.FC = () => {
         "An interactive Android mobile application designed as a localized thrift shop marketplace. Developed using native Java code and Firebase backend integration.",
       tags: ["Java", "Android SDK", "Firebase", "Mobile UI"],
       githubUrl: "https://github.com/mhderdnsyh/Thriftskuy",
+      imageUrl: "",
       gradient: "from-teal-600/70 via-cyan-600/70 to-blue-600/70",
     },
     {
@@ -53,6 +57,7 @@ export const Projects: React.FC = () => {
         "A customized corporate administrative and management information system built with PHP to optimize internal reporting, work scheduling, and operations tracking.",
       tags: ["PHP", "MySQL", "HTML5", "CSS3", "Bootstrap"],
       githubUrl: "https://github.com/mhderdnsyh/Aisya2",
+      imageUrl: "",
       gradient: "from-purple-600/70 via-fuchsia-600/70 to-pink-600/70",
     },
     {
@@ -61,6 +66,7 @@ export const Projects: React.FC = () => {
         "A responsive CRUD application for managing stock, supplier logs, and inventory assets. Developed as a database-driven mini project.",
       tags: ["PHP Native", "MySQL", "Bootstrap", "HTML5", "CSS3"],
       githubUrl: "https://github.com/mhderdnsyh",
+      imageUrl: "",
       gradient: "from-zinc-700/70 via-slate-700/70 to-neutral-700/70",
     },
     {
@@ -69,6 +75,7 @@ export const Projects: React.FC = () => {
         "A localized landing page website developed during the KKN (Community Service) program to highlight public information services, village announcements, and administrative profiles.",
       tags: ["HTML5", "CSS3", "Bootstrap", "JavaScript", "Design Assets"],
       githubUrl: "https://github.com/mhderdnsyh",
+      imageUrl: "",
       gradient: "from-lime-600/70 via-green-600/70 to-emerald-600/70",
     },
   ];
@@ -95,6 +102,8 @@ export const Projects: React.FC = () => {
               description={project.description}
               tags={project.tags}
               githubUrl={project.githubUrl}
+              demoUrl={project.demoUrl}
+              imageUrl={project.imageUrl}
               gradient={project.gradient}
             />
           ))}

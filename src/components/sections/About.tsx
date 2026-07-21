@@ -15,6 +15,34 @@ import {
   BookOpen,
 } from "lucide-react";
 
+interface ImageWithFallbackProps {
+  src?: string;
+  alt: string;
+  fallbackIcon: React.ReactNode;
+  className?: string;
+  containerClassName?: string;
+}
+
+const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
+  src,
+  alt,
+  fallbackIcon,
+  className = "w-full h-full object-contain",
+  containerClassName,
+}) => {
+  const [error, setError] = useState(false);
+
+  if (!src || error) {
+    return <div className={containerClassName}>{fallbackIcon}</div>;
+  }
+
+  return (
+    <div className={containerClassName}>
+      <img src={src} alt={alt} className={className} onError={() => setError(true)} />
+    </div>
+  );
+};
+
 export const About: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"experience" | "education" | "certificates">("experience");
 
@@ -40,7 +68,8 @@ export const About: React.FC = () => {
     {
       role: "Backup Store Leader",
       company: "Sports Station (PT. Mitra Adiperkasa Tbk)",
-      documentationImage: "/images/morning-briefing.png",
+      logo: "",
+      documentationImage: "/images/documentation-sports-station.png",
       location: "Pekanbaru, Indonesia",
       period: "Jul 2026 - Present",
       points: [
@@ -54,7 +83,8 @@ export const About: React.FC = () => {
     {
       role: "Backup Store Leader",
       company: "Puma (PT. Mitra Adiperkasa Tbk)",
-      documentationImage: "/images/dokumentasi-puma.png",
+      logo: "",
+      documentationImage: "/images/documentation-puma.png",
       location: "Pekanbaru, Indonesia",
       period: "Mar 2026 - Jun 2026",
       points: [
@@ -65,7 +95,8 @@ export const About: React.FC = () => {
     {
       role: "Store Associate",
       company: "Sports Station (PT. Mitra Adiperkasa Tbk)",
-      documentationImage: "/images/dokumentasi-sports-station.png",
+      logo: "",
+      documentationImage: "/images/documentation-sports-station-2.png",
       location: "Pekanbaru, Indonesia",
       period: "Mar 2024 - Feb 2026",
       points: [
@@ -78,7 +109,8 @@ export const About: React.FC = () => {
     {
       role: "Intern Frontend / Backend Developer",
       company: "Lab Inkubator Universitas Islam Negeri Sultan Syarif Kasim Riau",
-      documentationImage: "/images/dokumentasi-intern.png",
+      logo: "",
+      documentationImage: "/images/documentation-intern-lab-inkubator.png",
       location: "Pekanbaru, Indonesia",
       period: "Jan 2023 - Feb 2023",
       points: [
@@ -91,7 +123,8 @@ export const About: React.FC = () => {
     {
       role: "KPPS (Polling Station Working Committee)",
       company: "General Election Commission (KPU)",
-      documentationImage: "/images/dokumentasi-kpps.png",
+      logo: "",
+      documentationImage: "",
       location: "Pekanbaru, Indonesia",
       period: "Feb 2024",
       points: [
@@ -102,7 +135,8 @@ export const About: React.FC = () => {
     {
       role: "Enumerator (Surveyor)",
       company: "Statistics Indonesia (BPS - Regsosek 2022)",
-      documentationImage: "/images/dokumentasi-bps.png",
+      logo: "",
+      documentationImage: "",
       location: "Pekanbaru, Indonesia",
       period: "Oct - Nov 2022",
       points: [
@@ -115,6 +149,8 @@ export const About: React.FC = () => {
     {
       degree: "Bachelor of Informatics Engineering",
       institution: "Universitas Islam Negeri Sultan Syarif Kasim Riau",
+      logo: "",
+      documentationImage: "/images/documentation-education-s1.png",
       period: "May 2020 - July 2025",
       grade: "GPA: 3.64 / 4.00",
       thesis: "Text-to-Speech (TTS) for East Javanese Blitar Dialect using VITS (Python, PyTorch)",
@@ -123,13 +159,21 @@ export const About: React.FC = () => {
   ];
 
   const certifications = [
-    { title: "Figma for UI/UX Design", issuer: "Udemy", credentialUrl: "#", date: "Aug 2025" },
-    { title: "Flutter Development: From Basic to Advanced UI", issuer: "Udemy", credentialUrl: "#", date: "Aug 2025" },
-    { title: "Database Programming with PL/SQL", issuer: "Oracle Academy", credentialUrl: "#", date: "Jun 2022" },
-    { title: "Database Programming with SQL", issuer: "Oracle Academy", credentialUrl: "#", date: "Dec 2021" },
-    { title: "PHP Course", issuer: "Sololearn", credentialUrl: "#", date: "Jun 2022" },
-    { title: "JavaScript Course", issuer: "Sololearn", credentialUrl: "#", date: "Apr 2022" },
-    { title: "UI/UX Design for Beginner", issuer: "Dibimbing.id", credentialUrl: "#", date: "Jan 2022" },
+    { title: "Figma for UI/UX Design", issuer: "Udemy", logo: "", credentialUrl: "/images/documentation-certificate-figma.png", date: "Aug 2025" },
+    { title: "Flutter Development: From Basic to Advanced UI", issuer: "Udemy", logo: "", credentialUrl: "/images/documentation-certificate-flutter.png", date: "Aug 2025" },
+    { title: "Database Programming with PL/SQL", issuer: "Oracle Academy", logo: "", credentialUrl: "/images/documentation-certificate-database-programming-with-pl-sql.png", date: "Jun 2022" },
+    { title: "Database Programming with SQL", issuer: "Oracle Academy", logo: "", credentialUrl: "/images/documentation-certificate-database-programming-with-sql.png", date: "Dec 2021" },
+    { title: "Database Design", issuer: "Oracle Academy", logo: "", credentialUrl: "/images/documentation-certificate-database-design.png", date: "Dec 2021" },
+    { title: "PHP Course", issuer: "Sololearn", logo: "", credentialUrl: "/images/documentation-certificate-php.png", date: "Jun 2022" },
+    { title: "JavaScript Course", issuer: "Sololearn", logo: "", credentialUrl: "/images/documentation-certificate-javascript.png", date: "Apr 2022" },
+    { title: "UI/UX Design for Beginner", issuer: "Dibimbing.id", logo: "", credentialUrl: "/images/documentation-certficate-ui-ux-designer.png", date: "Jan 2022" },
+    { title: "Responsive Web Design", issuer: "Sololearn", logo: "", credentialUrl: "/images/documentation-certficate-responsive-web-design.png", date: "Jun 2022" },
+    { title: "CSS Course", issuer: "Sololearn", logo: "", credentialUrl: "/images/documentation-certificate-css.png", date: "Jun 2022" },
+    { title: "HTML & CSS Course", issuer: "Sololearn", logo: "", credentialUrl: "/images/documentation-certficate-html-css.png", date: "Jun 2022" },
+    { title: "Web Development Fundamentals", issuer: "Sololearn", logo: "", credentialUrl: "/images/documentation-certificate-web-development-fundamentals.png", date: "Jun 2022" },
+    { title: "Microsoft Office Specialist", issuer: "Microsoft", logo: "", credentialUrl: "/images/documentation-certificate-microsoft-office.png", date: "Jan 2022" },
+    { title: "Teknisi Jaringan (Network Technician)", issuer: "BNSP", logo: "", credentialUrl: "/images/documentation-certificate-teknisi-jaringan.png", date: "2023" },
+    { title: "TOEFL English Proficiency", issuer: "ETS", logo: "", credentialUrl: "/images/documentation-certificate-toefl.png", date: "2024" },
   ];
 
   const communities = [
@@ -269,12 +313,20 @@ export const About: React.FC = () => {
                       {/* Timeline node dot */}
                       <span className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-zinc-900 border-2 border-indigo-500 group-hover:bg-indigo-400 group-hover:scale-110 transition-all duration-300"></span>
 
-                      <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
-                        <div>
-                          <h5 className="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors">
-                            {exp.role}
-                          </h5>
-                          <p className="text-zinc-400 text-sm font-mono">{exp.company}</p>
+                      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-3">
+                        <div className="flex items-center gap-4">
+                          <ImageWithFallback
+                            src={exp.logo}
+                            alt={exp.company}
+                            containerClassName="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center p-1 overflow-hidden shrink-0 group-hover:border-indigo-500/30 transition-colors"
+                            fallbackIcon={<Briefcase size={22} className="text-zinc-500 group-hover:text-indigo-400 transition-colors" />}
+                          />
+                          <div>
+                            <h5 className="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors">
+                              {exp.role}
+                            </h5>
+                            <p className="text-zinc-400 text-sm font-mono">{exp.company}</p>
+                          </div>
                         </div>
                         <div className="flex flex-col md:items-end gap-1 text-xs font-mono text-zinc-500">
                           <span className="flex items-center gap-1.5">
@@ -327,12 +379,20 @@ export const About: React.FC = () => {
                     <div key={idx} className="relative group">
                       <span className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-zinc-900 border-2 border-purple-500 group-hover:bg-purple-400 group-hover:scale-110 transition-all duration-300"></span>
 
-                      <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
-                        <div>
-                          <h5 className="text-lg font-bold text-white group-hover:text-purple-400 transition-colors">
-                            {edu.degree}
-                          </h5>
-                          <p className="text-zinc-400 text-sm font-mono">{edu.institution}</p>
+                      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                        <div className="flex items-center gap-4">
+                          <ImageWithFallback
+                            src={edu.logo}
+                            alt={edu.institution}
+                            containerClassName="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center p-1 overflow-hidden shrink-0 group-hover:border-purple-500/30 transition-colors"
+                            fallbackIcon={<GraduationCap size={22} className="text-zinc-500 group-hover:text-purple-400 transition-colors" />}
+                          />
+                          <div>
+                            <h5 className="text-lg font-bold text-white group-hover:text-purple-400 transition-colors">
+                              {edu.degree}
+                            </h5>
+                            <p className="text-zinc-400 text-sm font-mono">{edu.institution}</p>
+                          </div>
                         </div>
                         <div className="flex flex-col md:items-end gap-1 text-xs font-mono text-zinc-500">
                           <span className="flex items-center gap-1.5">
@@ -358,6 +418,20 @@ export const About: React.FC = () => {
                           <p className="text-zinc-400">{edu.activities}</p>
                         </div>
                       </div>
+
+                      {/* Documentation Image */}
+                      {edu.documentationImage && (
+                        <div className="mt-4 border border-white/10 rounded-xl overflow-hidden bg-white/5 relative group/img">
+                          <img 
+                            src={edu.documentationImage} 
+                            alt={`Documentation for ${edu.degree} at ${edu.institution}`}
+                            className="w-full h-auto max-h-[300px] object-cover object-center md:object-contain group-hover/img:scale-105 transition-transform duration-500" 
+                          />
+                          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                            <span className="text-white text-xs font-mono font-bold tracking-widest uppercase bg-black/50 px-3 py-1 rounded-full border border-white/20">Documentation</span>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </motion.div>
@@ -383,11 +457,19 @@ export const About: React.FC = () => {
                           key={idx}
                           className="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-500/20 hover:bg-white/10 transition-all flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 group"
                         >
-                          <div>
-                            <p className="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors">
-                              {cert.title}
-                            </p>
-                            <p className="text-xs text-zinc-500 font-mono mt-0.5">{cert.issuer}</p>
+                          <div className="flex items-center gap-4">
+                            <ImageWithFallback
+                              src={cert.logo}
+                              alt={cert.issuer}
+                              containerClassName="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center p-1 overflow-hidden shrink-0 group-hover:border-cyan-500/30 transition-colors"
+                              fallbackIcon={<Award size={18} className="text-zinc-500 group-hover:text-cyan-400 transition-colors" />}
+                            />
+                            <div>
+                              <p className="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors">
+                                {cert.title}
+                              </p>
+                              <p className="text-xs text-zinc-500 font-mono mt-0.5">{cert.issuer}</p>
+                            </div>
                           </div>
                           
                           <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">

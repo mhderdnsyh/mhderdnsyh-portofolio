@@ -38,6 +38,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   imageUrl,
   gradient,
 }) => {
+  const [imageError, setImageError] = React.useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -48,9 +50,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       className="glass-card rounded-2xl overflow-hidden flex flex-col h-full group hover:border-indigo-500/30 transition-colors duration-300"
     >
       {/* Visual Thumbnail */}
-      {imageUrl ? (
+      {imageUrl && !imageError ? (
         <div className="h-48 w-full relative overflow-hidden group-hover:opacity-90 transition-opacity">
-          <img src={imageUrl} alt={title} className="w-full h-full object-cover" />
+          <img
+            src={imageUrl}
+            alt={title}
+            className="w-full h-full object-cover"
+            onError={() => setImageError(true)}
+          />
         </div>
       ) : (
         <div className={`h-48 w-full bg-gradient-to-br ${gradient} flex items-center justify-center p-6 relative overflow-hidden`}>
