@@ -30,6 +30,18 @@ export const Projects: React.FC = () => {
       gradient: "from-orange-600/70 via-red-600/70 to-pink-600/70",
     },
     {
+      title: "Laverpool",
+      description:
+        "A mobile application built with Android Studio that implements SQLite/Room database management. Developed as a final project (UAS) for the Mobile Programming course to track, query, and store application data.",
+      tags: ["Android Studio", "Java/Kotlin", "SQLite", "Room Database", "Mobile App"],
+      githubUrl: "https://github.com/mhderdnsyh/laverpool-dbandrouas",
+      images: [
+        "/images/documentation-project-laverpool.png",
+        "/images/documentation-project-laverpool-2.png",
+      ],
+      gradient: "from-purple-600/70 via-fuchsia-600/70 to-pink-600/70",
+    },
+    {
       title: "Hadith Search Application (Sunan Abu Dawud)",
       description:
         "A web-based search and filtering system for Hadith collection Sunan Abu Dawud. Built during an internship at Lab Inkubator UIN SUSKA Riau to provide efficient access to hadith references.",
