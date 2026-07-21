@@ -69,15 +69,6 @@ export const Projects: React.FC = () => {
       gradient: "from-teal-600/70 via-cyan-600/70 to-blue-600/70",
     },
     {
-      title: "Web-based Inventory System",
-      description:
-        "A responsive CRUD application for managing stock, supplier logs, and inventory assets. Developed as a database-driven mini project.",
-      tags: ["PHP Native", "MySQL", "Bootstrap", "HTML5", "CSS3"],
-      githubUrl: "https://github.com/mhderdnsyh",
-      imageUrl: "",
-      gradient: "from-zinc-700/70 via-slate-700/70 to-neutral-700/70",
-    },
-    {
       title: "Lipatkain Utara Village Landing Page",
       description:
         "A localized landing page website developed during the KKN (Community Service) program to highlight public information services, village announcements, and administrative profiles.",
