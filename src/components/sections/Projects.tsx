@@ -61,15 +61,6 @@ export const Projects: React.FC = () => {
       gradient: "from-teal-600/70 via-cyan-600/70 to-blue-600/70",
     },
     {
-      title: "Aisya2",
-      description:
-        "A customized corporate administrative and management information system built with PHP to optimize internal reporting, work scheduling, and operations tracking.",
-      tags: ["PHP", "MySQL", "HTML5", "CSS3", "Bootstrap"],
-      githubUrl: "https://github.com/mhderdnsyh/Aisya2",
-      imageUrl: "",
-      gradient: "from-purple-600/70 via-fuchsia-600/70 to-pink-600/70",
-    },
-    {
       title: "Web-based Inventory System",
       description:
         "A responsive CRUD application for managing stock, supplier logs, and inventory assets. Developed as a database-driven mini project.",
