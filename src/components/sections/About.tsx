@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { DocumentationCarousel } from "../DocumentationCarousel";
 import {
   GraduationCap,
   Code2,
@@ -69,7 +70,11 @@ export const About: React.FC = () => {
       role: "Backup Store Leader",
       company: "Sports Station (PT. Mitra Adiperkasa Tbk)",
       logo: "",
-      documentationImage: "/images/documentation-sports-station.png",
+      documentationImages: [
+        "/images/documentation-sports-station.png",
+        "/images/documentation-sports-station-3.png",
+        "/images/documentation-sports-station-4.png",
+      ],
       location: "Pekanbaru, Indonesia",
       period: "Jul 2026 - Present",
       points: [
@@ -84,7 +89,13 @@ export const About: React.FC = () => {
       role: "Backup Store Leader",
       company: "Puma (PT. Mitra Adiperkasa Tbk)",
       logo: "",
-      documentationImage: "/images/documentation-puma.png",
+      documentationImages: [
+        "/images/documentation-puma.png",
+        "/images/documentation-puma-2.png",
+        "/images/documentation-puma-3.png",
+        "/images/documentation-puma-4.png",
+        "/images/documentation-puma-5.png",
+      ],
       location: "Pekanbaru, Indonesia",
       period: "Mar 2026 - Jun 2026",
       points: [
@@ -96,7 +107,11 @@ export const About: React.FC = () => {
       role: "Store Associate",
       company: "Sports Station (PT. Mitra Adiperkasa Tbk)",
       logo: "",
-      documentationImage: "/images/documentation-sports-station-2.png",
+      documentationImages: [
+        "/images/documentation-sports-station-2.png",
+        "/images/documentation-sports-station-5.png",
+        "/images/documentation-sports-station-6.png",
+      ],
       location: "Pekanbaru, Indonesia",
       period: "Mar 2024 - Feb 2026",
       points: [
@@ -110,7 +125,10 @@ export const About: React.FC = () => {
       role: "Intern Frontend / Backend Developer",
       company: "Lab Inkubator Universitas Islam Negeri Sultan Syarif Kasim Riau",
       logo: "",
-      documentationImage: "/images/documentation-intern-lab-inkubator.png",
+      documentationImages: [
+        "/images/documentation-intern-lab-inkubator.png",
+        "/images/documentation-intern-lab-inkubator-2.png",
+      ],
       location: "Pekanbaru, Indonesia",
       period: "Jan 2023 - Feb 2023",
       points: [
@@ -124,7 +142,7 @@ export const About: React.FC = () => {
       role: "KPPS (Polling Station Working Committee)",
       company: "General Election Commission (KPU)",
       logo: "",
-      documentationImage: "",
+      documentationImages: [],
       location: "Pekanbaru, Indonesia",
       period: "Feb 2024",
       points: [
@@ -136,7 +154,7 @@ export const About: React.FC = () => {
       role: "Enumerator (Surveyor)",
       company: "Statistics Indonesia (BPS - Regsosek 2022)",
       logo: "",
-      documentationImage: "",
+      documentationImages: [],
       location: "Pekanbaru, Indonesia",
       period: "Oct - Nov 2022",
       points: [
@@ -150,7 +168,12 @@ export const About: React.FC = () => {
       degree: "Bachelor of Informatics Engineering",
       institution: "Universitas Islam Negeri Sultan Syarif Kasim Riau",
       logo: "",
-      documentationImage: "/images/documentation-education-s1.png",
+      documentationImages: [
+        "/images/documentation-education-s1.png",
+        "/images/documentation-education-s1-1.png",
+        "/images/documentation-education-s1-2.png",
+        "/images/documentation-education-s1-3.png",
+      ],
       period: "May 2020 - July 2025",
       grade: "GPA: 3.64 / 4.00",
       thesis: "Text-to-Speech (TTS) for East Javanese Blitar Dialect using VITS (Python, PyTorch)",
@@ -348,18 +371,12 @@ export const About: React.FC = () => {
                         ))}
                       </ul>
                       
-                      {/* Documentation Image */}
-                      {exp.documentationImage && (
-                        <div className="mt-4 border border-white/10 rounded-xl overflow-hidden bg-white/5 relative group/img">
-                          <img 
-                            src={exp.documentationImage} 
-                            alt={`Documentation for ${exp.role} at ${exp.company}`}
-                            className="w-full h-auto max-h-[300px] object-cover object-center md:object-contain group-hover/img:scale-105 transition-transform duration-500" 
-                          />
-                          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
-                            <span className="text-white text-xs font-mono font-bold tracking-widest uppercase bg-black/50 px-3 py-1 rounded-full border border-white/20">Documentation</span>
-                          </div>
-                        </div>
+                      {/* Documentation Image Carousel */}
+                      {exp.documentationImages && exp.documentationImages.length > 0 && (
+                        <DocumentationCarousel
+                          images={exp.documentationImages}
+                          alt={`Documentation for ${exp.role} at ${exp.company}`}
+                        />
                       )}
                     </div>
                   ))}
@@ -419,18 +436,12 @@ export const About: React.FC = () => {
                         </div>
                       </div>
 
-                      {/* Documentation Image */}
-                      {edu.documentationImage && (
-                        <div className="mt-4 border border-white/10 rounded-xl overflow-hidden bg-white/5 relative group/img">
-                          <img 
-                            src={edu.documentationImage} 
-                            alt={`Documentation for ${edu.degree} at ${edu.institution}`}
-                            className="w-full h-auto max-h-[300px] object-cover object-center md:object-contain group-hover/img:scale-105 transition-transform duration-500" 
-                          />
-                          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
-                            <span className="text-white text-xs font-mono font-bold tracking-widest uppercase bg-black/50 px-3 py-1 rounded-full border border-white/20">Documentation</span>
-                          </div>
-                        </div>
+                      {/* Documentation Image Carousel */}
+                      {edu.documentationImages && edu.documentationImages.length > 0 && (
+                        <DocumentationCarousel
+                          images={edu.documentationImages}
+                          alt={`Documentation for ${edu.degree} at ${edu.institution}`}
+                        />
                       )}
                     </div>
                   ))}

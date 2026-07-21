@@ -12,7 +12,11 @@ export const Projects: React.FC = () => {
       tags: ["Web App", "Responsive Design", "Relational Database", "Google Maps", "RSVP"],
       githubUrl: "https://github.com/mhderdnsyh",
       demoUrl: "https://surya-juni-wedding.vercel.app/",
-      imageUrl: "/images/documentation-project-wedding-surya-juni-3.png",
+      images: [
+        "/images/documentation-project-wedding-surya-juni-3.png",
+        "/images/documentation-project-wedding-surya-juni-1.png",
+        "/images/documentation-project-wedding-surya-juni.png",
+      ],
       gradient: "from-rose-600/70 via-pink-600/70 to-red-600/70",
     },
     {
@@ -21,7 +25,7 @@ export const Projects: React.FC = () => {
         "Developed a Javanese dialect Text-to-Speech (TTS) system using VITS (Variational Inference with adversarial learning). Handled dataset synthesis (LJSpeech format) and model optimization using Python & PyTorch.",
       tags: ["Jupyter Notebook", "Python", "PyTorch", "TTS", "VITS"],
       githubUrl: "https://github.com/mhderdnsyh/vits-project",
-      imageUrl: "",
+      imageUrl: "/images/documentation-project-vits.png",
       gradient: "from-orange-600/70 via-red-600/70 to-pink-600/70",
     },
     {
@@ -75,7 +79,7 @@ export const Projects: React.FC = () => {
         "A localized landing page website developed during the KKN (Community Service) program to highlight public information services, village announcements, and administrative profiles.",
       tags: ["HTML5", "CSS3", "Bootstrap", "JavaScript", "Design Assets"],
       githubUrl: "https://github.com/mhderdnsyh",
-      imageUrl: "",
+      imageUrl: "/images/documentation-project-website-lipat-kain-utara.png",
       gradient: "from-lime-600/70 via-green-600/70 to-emerald-600/70",
     },
   ];
@@ -104,6 +108,7 @@ export const Projects: React.FC = () => {
               githubUrl={project.githubUrl}
               demoUrl={project.demoUrl}
               imageUrl={project.imageUrl}
+              images={project.images}
               gradient={project.gradient}
             />
           ))}

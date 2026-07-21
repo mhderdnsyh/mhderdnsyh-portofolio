@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import { DocumentationCarousel } from "./DocumentationCarousel";
 
 const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -26,6 +27,7 @@ interface ProjectCardProps {
   githubUrl: string;
   demoUrl?: string;
   imageUrl?: string;
+  images?: string[];
   gradient: string;
 }
 
@@ -36,9 +38,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   githubUrl,
   demoUrl,
   imageUrl,
+  images,
   gradient,
 }) => {
   const [imageError, setImageError] = React.useState(false);
+  const allImages = images && images.length > 0 ? images : imageUrl ? [imageUrl] : [];
 
   return (
     <motion.div
@@ -50,10 +54,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       className="glass-card rounded-2xl overflow-hidden flex flex-col h-full group hover:border-indigo-500/30 transition-colors duration-300"
     >
       {/* Visual Thumbnail */}
-      {imageUrl && !imageError ? (
+      {allImages.length > 1 ? (
+        <div className="p-2 -mt-4">
+          <DocumentationCarousel images={allImages} alt={title} className="max-h-[220px] object-cover" />
+        </div>
+      ) : allImages.length === 1 && !imageError ? (
         <div className="h-48 w-full relative overflow-hidden group-hover:opacity-90 transition-opacity">
           <img
-            src={imageUrl}
+            src={allImages[0]}
             alt={title}
             className="w-full h-full object-cover"
             onError={() => setImageError(true)}
